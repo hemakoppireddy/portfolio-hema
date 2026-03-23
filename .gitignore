@@ -1,0 +1,107 @@
+# =========================
+
+# Node modules
+
+# =========================
+
+node_modules/
+
+# =========================
+
+# Build / production
+
+# =========================
+
+dist/
+build/
+.out/
+
+# =========================
+
+# Logs
+
+# =========================
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+
+# Environment variables
+
+# =========================
+
+.env
+.env.local
+.env.*.local
+
+# =========================
+
+# OS files
+
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+
+# Editor / IDE
+
+# =========================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+
+# Cache files
+
+# =========================
+
+.cache/
+.parcel-cache/
+.vite/
+*.tsbuildinfo
+
+# =========================
+
+# Testing
+
+# =========================
+
+coverage/
+
+# =========================
+
+# Misc
+
+# =========================
+
+*.pem
+*.pid
+*.seed
+
+# =========================
+
+# Optional (images if needed)
+
+# =========================
+
+# Uncomment if you don't want to upload assets
+
+# *.png
+
+# *.jpg
+
+# *.jpeg
+
+# *.gif
+
+# *.webp

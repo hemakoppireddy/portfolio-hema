@@ -1,0 +1,221 @@
+.contact {
+  padding: 7rem 0;
+  background-color: var(--secondary-color);
+  border-top: 1px solid var(--border);
+}
+
+/* ── Layout ───────────────────────────────────────── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  margin-top: 3.5rem;
+  align-items: stretch;
+}
+
+/* ── Left ─────────────────────────────────────────── */
+.contact-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-intro {
+  font-size: 0.95rem;
+  color: var(--subtle-text);
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+/* Contact list */
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.25s;
+}
+.contact-item:first-child {
+  border-top: 1px solid var(--border);
+}
+.contact-item:hover {
+  padding-left: 4px;
+}
+
+.contact-item-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  background: var(--accent-dim);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+}
+
+.contact-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.contact-item-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--subtle-text);
+}
+
+.contact-item-value {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--light-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-item-link {
+  transition: color 0.2s;
+}
+.contact-item-link:hover {
+  color: var(--accent-color);
+}
+
+/* ── Right: Form ──────────────────────────────────── */
+.contact-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  flex: 1;
+}
+
+/* Two fields side by side */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--subtle-text);
+}
+
+.form-field input,
+.form-field textarea {
+  background: var(--primary-color);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--light-text);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  padding: 0.85rem 1rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  outline: none;
+  width: 100%;
+  resize: none;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+/* Submit button */
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.95rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.contact-submit:hover {
+  background: #f0c520;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(251, 191, 36, 0.3);
+}
+
+/* Success state */
+.form-success {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--accent-dim);
+  border: 1px solid var(--border-accent);
+  border-radius: 10px;
+  color: var(--accent-color);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .contact {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .contact-item-value {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-item-icon {
+    width: 32px;
+    height: 32px;
+  }
+}

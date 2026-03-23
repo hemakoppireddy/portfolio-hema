@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-color:   #0F172A;
+  --secondary-color: #1E293B;
+  --accent-color:    #FBBF24;
+  --light-text:      #E2E8F0;
+  --subtle-text:     #94A3B8;
+  --font-family:     'Inter', sans-serif;
+
+  /* Derived tokens */
+  --accent-dim:    rgba(251, 191, 36, 0.1);
+  --accent-glow:   rgba(251, 191, 36, 0.3);
+  --border:        rgba(255, 255, 255, 0.07);
+  --border-accent: rgba(251, 191, 36, 0.25);
+  --bg-card:       #1E293B;
+  --bg-card-hover: #243044;
+  --text-muted:    #4A5568;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--primary-color); }
+::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
+
+::selection { background: var(--accent-color); color: var(--primary-color); }
+
+a { text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 0.9rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--light-text);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.section-title em {
+  font-style: normal;
+  color: var(--accent-color);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.2rem; }
+}
