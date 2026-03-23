@@ -7,21 +7,21 @@ const projects = [
     desc: 'A web platform for learning DSA and Full Stack Development through interactive modules, games, and built-in code compilers.',
     tags: ['HTML', 'CSS', 'JavaScript', 'REST API'],
     github: 'https://github.com/lohithaalekhyakollu/CodeDelight',
-    img: 'public/images/codedelight-page.png',
+    img: '/portfolio-hema/images/codedelight-page.png',
   },
   {
     title: 'Multilingual React Web App with RTL Support',
     desc: 'A React-based web application with dynamic multilingual support using react-i18next, including automatic RTL/LTR switching and persistent user preferences.',
     tags: ['React', 'i18next', 'JavaScript'],
     github: 'https://github.com/hemakoppireddy/react-i18n-multilang-rtl', 
-    img: 'public/images/multilanguage-page.png', 
+    img: '/portfolio-hema/images/multilanguage-page.png', 
   },
   {
     title: 'EASE — Student Service Web App',
     desc: 'A responsive web application to streamline student services like appointment scheduling, queue tracking, and secure payment slot booking.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/hemakoppireddy/EaseWebProject',
-    img: 'public/images/ease-page.png',
+    img: '/portfolio-hema/images/ease-page.png',
   },
 ];
 

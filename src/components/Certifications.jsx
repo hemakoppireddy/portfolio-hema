@@ -22,37 +22,37 @@ const certifications = [
   {
     title: 'MongoDB Associate Developer',
     issuer: 'MongoDB',
-    image: 'public/images/mongodb.webp',
+    image: '/portfolio-hema/images/mongodb.webp',
     link: 'https://drive.google.com/file/d/1hP6bE7Dd1jvmllqea5Vxjj2TXRHv4ThQ/view',
   },
   {
     title: 'Red Hat System Administration (RHCSA)',
     issuer: 'Red Hat',
-    image: 'public/images/redhat.webp',
+    image: '/portfolio-hema/images/redhat.webp',
     link: 'https://drive.google.com/file/d/1vwX_HaN4AaClppw1_36hFY3ctbKVULya/view',
   },
   {
     title: 'Oracle Certified Java Foundations',
     issuer: 'Oracle',
-    image: 'public/images/oracle.webp',
+    image: '/portfolio-hema/images/oracle.webp',
     link: 'https://drive.google.com/file/d/1SGOaoY9yW7FDOaL3YjpfRTpTStL0DErl/view',
   },
   {
     title: 'IT Specialist HTML and CSS',
     issuer: 'Certiport',
-    image: 'public/images/certiport.webp',
+    image: '/portfolio-hema/images/certiport.webp',
     link: 'https://drive.google.com/file/d/1z1wotHi12QCAj236jfQbVC2iOhx1qMyq/view',
   },
   {
     title: 'Programming Essentials in C++',
     issuer: 'Cisco Networking Academy',
-    image: 'public/images/cpp.webp',
+    image: '/portfolio-hema/images/cpp.webp',
     link: 'https://drive.google.com/file/d/11G8ZSo94_WguEvmp7v4Op9Dhxvht6qQH/view',
   },
   {
     title: 'Programming Essentials in C',
     issuer: 'Cisco Networking Academy',
-    image: 'public/images/c.webp',
+    image: '/portfolio-hema/images/c.webp',
     link: 'https://drive.google.com/file/d/1HZR-mrdJX9B5u7TjxG9dyo4gRdqwmQt4/view',
   },
 ];
