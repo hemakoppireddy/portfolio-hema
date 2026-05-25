@@ -1,7 +1,7 @@
 import '../styles/Hero.css';
 
 export default function Hero() {
-  const profileImg = '/portfolio-hema/images/Hema_Bamboo_pic.png';
+  const profileImg = '/portfolio-hema/images/Hema_Bamboo_pic.webp';
 
   return (
     <section id="home" className="hero">
