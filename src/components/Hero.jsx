@@ -36,7 +36,7 @@ export default function Hero() {
               </svg>
             </a>
             
-              <a href="/Hema_resume.pdf"
+              <a href="/portfolio-hema/Hema_resume.pdf"
               download="Hema_Durga_Resume.pdf"
               className="btn-outline"
               target="_blank"

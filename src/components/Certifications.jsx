@@ -1,17 +1,20 @@
-import { useRef, useEffect } from 'react';
-import '../styles/Certifications.css';
+import { useRef, useEffect, useState } from "react";
+import "../styles/Certifications.css";
 
 function useRevealRef() {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        el.classList.add('visible');
-        observer.unobserve(el);
-      }
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("visible");
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1 },
+    );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
@@ -20,40 +23,40 @@ function useRevealRef() {
 
 const certifications = [
   {
-    title: 'MongoDB Associate Developer',
-    issuer: 'MongoDB',
-    image: '/portfolio-hema/images/mongodb.webp',
-    link: 'https://drive.google.com/file/d/1hP6bE7Dd1jvmllqea5Vxjj2TXRHv4ThQ/view',
+    title: "MongoDB Associate Developer",
+    issuer: "MongoDB",
+    image: "/portfolio-hema/images/mongodb.webp",
+    link: "https://drive.google.com/file/d/1hP6bE7Dd1jvmllqea5Vxjj2TXRHv4ThQ/view",
   },
   {
-    title: 'Red Hat System Administration (RHCSA)',
-    issuer: 'Red Hat',
-    image: '/portfolio-hema/images/redhat.webp',
-    link: 'https://drive.google.com/file/d/1vwX_HaN4AaClppw1_36hFY3ctbKVULya/view',
+    title: "Red Hat System Administration (RHCSA)",
+    issuer: "Red Hat",
+    image: "/portfolio-hema/images/redhat.webp",
+    link: "https://drive.google.com/file/d/1vwX_HaN4AaClppw1_36hFY3ctbKVULya/view",
   },
   {
-    title: 'Oracle Certified Java Foundations',
-    issuer: 'Oracle',
-    image: '/portfolio-hema/images/oracle.webp',
-    link: 'https://drive.google.com/file/d/1SGOaoY9yW7FDOaL3YjpfRTpTStL0DErl/view',
+    title: "Oracle Certified Java Foundations",
+    issuer: "Oracle",
+    image: "/portfolio-hema/images/oracle.webp",
+    link: "https://drive.google.com/file/d/1SGOaoY9yW7FDOaL3YjpfRTpTStL0DErl/view",
   },
   {
-    title: 'IT Specialist HTML and CSS',
-    issuer: 'Certiport',
-    image: '/portfolio-hema/images/certiport.webp',
-    link: 'https://drive.google.com/file/d/1z1wotHi12QCAj236jfQbVC2iOhx1qMyq/view',
+    title: "IT Specialist HTML and CSS",
+    issuer: "Certiport",
+    image: "/portfolio-hema/images/certiport.webp",
+    link: "https://drive.google.com/file/d/1z1wotHi12QCAj236jfQbVC2iOhx1qMyq/view",
   },
   {
-    title: 'Programming Essentials in C++',
-    issuer: 'Cisco Networking Academy',
-    image: '/portfolio-hema/images/cpp.webp',
-    link: 'https://drive.google.com/file/d/11G8ZSo94_WguEvmp7v4Op9Dhxvht6qQH/view',
+    title: "Programming Essentials in C++",
+    issuer: "Cisco Networking Academy",
+    image: "/portfolio-hema/images/cpp.webp",
+    link: "https://drive.google.com/file/d/11G8ZSo94_WguEvmp7v4Op9Dhxvht6qQH/view",
   },
   {
-    title: 'Programming Essentials in C',
-    issuer: 'Cisco Networking Academy',
-    image: '/portfolio-hema/images/c.webp',
-    link: 'https://drive.google.com/file/d/1HZR-mrdJX9B5u7TjxG9dyo4gRdqwmQt4/view',
+    title: "Programming Essentials in C",
+    issuer: "Cisco Networking Academy",
+    image: "/portfolio-hema/images/c.webp",
+    link: "https://drive.google.com/file/d/1HZR-mrdJX9B5u7TjxG9dyo4gRdqwmQt4/view",
   },
 ];
 
@@ -73,10 +76,17 @@ function CertCard({ cert, delay }) {
         <img src={cert.image} alt={cert.title} className="cert-image" />
 
         <div className="cert-overlay">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-            <polyline points="15 3 21 3 21 9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
           </svg>
           View Certificate
         </div>
@@ -97,7 +107,7 @@ function CertCard({ cert, delay }) {
           stroke="currentColor"
           strokeWidth="2"
         >
-          <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          <path d="M7 17L17 7M17 7H7M17 7v10" />
         </svg>
       </div>
     </a>
@@ -107,10 +117,43 @@ function CertCard({ cert, delay }) {
 export default function Certifications() {
   const headerRef = useRevealRef();
 
+  const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    if (window.innerWidth > 600) return;
+
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    const firstCard = slider.querySelector(".cert-card");
+    if (!firstCard) return;
+
+    const cardWidth =
+      firstCard.offsetWidth +
+      parseInt(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap || 16);
+
+    const index = Math.round(slider.scrollLeft / cardWidth);
+
+    setActiveIndex(
+      Math.min(index, certifications.length - 1)
+    );
+  };
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    slider.addEventListener("scroll", handleScroll);
+
+    return () => {
+      slider.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section id="certifications" className="certifications">
       <div className="container">
-
         <div ref={headerRef} className="reveal">
           <p className="section-label">Certifications</p>
           <h2 className="section-title">
@@ -118,12 +161,27 @@ export default function Certifications() {
           </h2>
         </div>
 
-        <div className="certs-grid">
+        <div
+          className="certs-grid"
+          ref={sliderRef}
+        >
           {certifications.map((cert, i) => (
-            <CertCard key={cert.title} cert={cert} delay={i * 0.08} />
+            <CertCard
+              key={cert.title}
+              cert={cert}
+              delay={i * 0.08}
+            />
           ))}
         </div>
 
+        <div className="cert-slider-dots">
+          {certifications.map((_, index) => (
+            <span
+              key={index}
+              className={activeIndex === index ? "active" : ""}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

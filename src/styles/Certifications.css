@@ -88,12 +88,12 @@
 .cert-title {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--light-text);
+  color: var(--light-text) !important;
 }
 
 .cert-issuer {
   font-size: 0.72rem;
-  color: var(--subtle-text);
+  color: var(--subtle-text) !important;
   margin-top: 0.2rem;
 }
 
@@ -111,6 +111,10 @@
   color: var(--accent-color);
 }
 
+.cert-slider-dots {
+  display: none;
+}
+
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
@@ -124,18 +128,68 @@
 
 /* Mobile */
 @media (max-width: 600px) {
+
+  .cert-title {
+    font-size: 0.78rem;
+  }
+
   .certifications {
     padding: 5rem 0 2rem;
   }
 
   .certs-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    overflow-x: auto;
     gap: 1rem;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    padding-bottom: 1rem;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
-  .cert-title {
-    font-size: 0.78rem;
+  .certs-grid::-webkit-scrollbar {
+    display: none;
   }
+
+  .cert-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
+
+  .cert-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-slider-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    /* display: block; */
+    transition: all 0.3s ease;
+  }
+
+  .cert-slider-dots span.active {
+    width: 24px;
+    height: 8px;
+    border-radius: 20px;
+    background: var(--accent-color);
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  
 }
 
 /* Small Mobile */
